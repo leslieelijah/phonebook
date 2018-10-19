@@ -2,31 +2,29 @@
     <!-- Navigation -->
     <div class="row">
         <div class="col-1 logo"><img src="./../../assets/images/absa-redefined.jpg" width="100" /></div>
-        <div class="col">
-            <h6 class="text-left cib">| CIB</h6>
-        </div>
+        <div class="col"></div>
     </div>
 
     <div class="row">
         <div class="col title">
-            <h5>Phone book</h5>
+            <h5>Phone book app</h5>
         </div>
     </div>
 
     <ul class="nav nav-tabs" id="phoneBook" role="tablist">
         <li class="nav-item">
-            <a class="nav-link active" id="add-contacts-tab" data-toggle="tab" href="#add-contacts" role="tab" aria-controls="add-contacts" aria-selected="true">Add contacts</a>
+            <a class="nav-link active" id="addContacts-tab" data-toggle="tab" href="#addContacts" role="tab" aria-controls="addContacts" aria-selected="true">Add contacts</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" id="view-contacts-tab" data-toggle="tab" href="#view-contacts" role="tab" aria-controls="view-contacts" aria-selected="false">View contacts</a>
+            <a class="nav-link" id="viewContacts-tab" data-toggle="tab" href="#viewContacts" role="tab" aria-controls="viewContacts" aria-selected="false">View contacts</a>
         </li>
     </ul>
     <div class="tab-content" id="phoneBook">
-        <div class="tab-pane fade show active" id="add-contacts-tab" role="tabpanel" aria-labelledby="add-contacts-tab">
+        <div class="tab-pane fade show active" id="addContacts" role="tabpanel" aria-labelledby="addContacts-tab">
             <app-add-contacts></app-add-contacts>
         </div>
-        <div class="tab-pane fade" id="view-contacts" role="tabpanel" aria-labelledby="view-contacts-tab">
-            view-contacts
+        <div class="tab-pane fade" id="viewContacts" role="tabpanel" aria-labelledby="viewContacts-tab">
+            <app-view-contacts></app-view-contacts>
         </div>
     </div>
 </div>
