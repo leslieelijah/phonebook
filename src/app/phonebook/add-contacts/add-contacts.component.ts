@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { PhonebookService } from 'src/app/services/phonebook.service';
-import { PhoneBookData } from './../../services/data.service';
+import { PhoneBookDBService } from './../../services/phonebookdb.service';
 
 @Component({
   selector: 'app-add-contacts',
@@ -10,58 +10,31 @@ import { PhoneBookData } from './../../services/data.service';
 export class AddContactsComponent implements OnInit {
   public addToPhonebookResponse: any;
   public fetchPhonebookResponse: any;
-  public firstName: string;
-  public surname: string;
-  public companyOrRelationship: string;
+
+  public firstName: any;
+  public surname: any;
+  public companyOrRelationship: any ;
   public phoneNumber: any;
 
-  public phonebookDB: PhoneBookData[];
-  public phonebookDb = new PhoneBookData();
-
-  constructor(private phonebookService: PhonebookService, phonebookDB: PhoneBookData) { }
-
-public fetchPhonebook() {
-  this.phonebookService.getPhonebook().subscribe(
-    fetchPhonebook => {
-     this.fetchPhonebookResponse = fetchPhonebook.map( x => x);
-      console.log(this.fetchPhonebookResponse);
-      return this.fetchPhonebookResponse;
-      },
-      () => {},
-      () => {}
-  );
-
-}
-  public addToPhonebookPost() {
-    this.phonebookService.addToPhonebook().subscribe(
-      phonebook => {
-        this.fetchPhonebook();
-        // this.phonebookDB = phonebook;
-        console.log(this.fetchPhonebook());
-    //   this.firstName = this.phonebookDB.firstName;
-    // this.surname = this.phonebookDB.surname;
-    // this.companyOrRelationship = this.phonebookDB.companyOrRelationship;
-    // this.phoneNumber = this.phonebookDB.phoneNumber;
-    },
-    () => {
-      console.log('failing to subscribe to the data');
-    },
-    () => {});
-  }
-
-
-  onAddToPhonebook() {
-    // console.log(this.phonebookDB.firstName);
-
-
-  }
-
-  onSubmit() {
-    console.log(this.firstName);
-  }
-  ngOnInit() {
-    // this.onAddToPhonebook();
-    console.log(this.fetchPhonebookResponse);
+  constructor(private phonebookService: PhonebookService, private phoneBooks: PhoneBookDBService) {
+    // this.firstName = this.phoneBooks.firstName;
+    // this.surname = this.phoneBooks.surname;
+    // this.phoneNumber = this.phoneBooks.phoneNumber;
+    // this.companyOrRelationship = this.phoneBooks.companyOrRelationship;
    }
+
+  onAddToPhonebook(firstname, surname, company, phonenumber) {
+    // this.firstName = firstname;
+    // surname = this.phoneBooks.surname;
+    // phonenumber = this.phoneBooks.phoneNumber;
+    // company = this.phoneBooks.companyOrRelationship;
+    // console.log(this.firstName);
+    setTimeout(() => {
+      this.phonebookService.addToPhonebook(this.firstName, this.surname, this.companyOrRelationship, this.phoneNumber);
+    }, 1000);
+
+  }
+
+  ngOnInit() {}
 
 }

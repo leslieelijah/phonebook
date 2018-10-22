@@ -11,14 +11,12 @@ public viewPhonebookResponse: any;
   constructor(private phonebookService: PhonebookService) { }
 
   public getPhonebookList() {
-      this.phonebookService.viewPhonebook().subscribe(
-        data => {
-          this.viewPhonebookResponse = data;
-          console.log(this.viewPhonebookResponse);
+      this.phonebookService.viewPhonebookObservable().subscribe(
+        response => {
+          this.viewPhonebookResponse = response;
         },
-        () => {
-          console.log('Failing to get the data');
-        }
+        err => {},
+        () => {}
       );
   }
 

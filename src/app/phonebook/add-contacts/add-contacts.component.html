@@ -1,5 +1,5 @@
-<form>
-    
+<form (ngSubmit)="onAddToPhonebook(firstName, surname, companyOrRelationship, phoneNumber)">
+
     <div class="form-group">
         <h6>Add contact to phone book</h6>
     </div>
@@ -24,9 +24,9 @@
 
     <div class="form-group">
         <label for="phoneNumber">Number</label>
-        <input type="text" name="phoneNumber" [(ngModel)]='phoneNumber' class="form-control" id="phoneNumber" placeholder="Enter phone number">
+        <input type="text" name="phoneNumber" [(ngModel)]='this.phoneNumber' class="form-control" id="phoneNumber" placeholder="Enter phone number">
     </div>
 
-    <button type="submit" class="btn btn-primary" (click)="onAddToPhonebook()">Add to contact list</button>
+    <button type="submit" class="btn btn-primary">Add to contact list</button>
 
 </form>

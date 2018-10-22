@@ -11,5 +11,22 @@
     }
     .title {
         margin-bottom: 25px;
+        h5 {
+            line-height: 100%;
+        }
+    }
+}
+
+@media (max-width: 576px) {
+    #phoneBookWrap {
+        .title {
+            margin-bottom: 0px;
+            h5 {
+                line-height: 100%;
+            }
+        }
+        img {
+            margin: 0 -15px -10px;
+        }
     }
 }
